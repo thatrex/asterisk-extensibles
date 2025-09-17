@@ -50,7 +50,7 @@ This section instructs you on preparing your PBX to add music. You will only nee
 <summary><h3>Instructions: VitalPBX</h3></summary>
 
 1. FTP into your PBX.
-2. Copy `main.conf` into `/etc/asterisk/vitalpbx/` then rename it to `extensions__90-music.conf`.
+2. Copy `main.conf` into `/etc/asterisk/vitalpbx/` then rename it to `extensions__90-music-player.conf`.
 3. Under `/var/lib/asterisk/sounds/` create a directory named `music`.
 4. Create a Custom Context with the destination set to hangup. Alternatively you can put a track number instead of `menu`.
    ![Custom Context](../screenshots/m_vitalpbx_custom_contexts.png)

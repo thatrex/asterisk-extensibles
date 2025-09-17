@@ -45,7 +45,7 @@ This section instructs you on adding a talk bot, in this case Lenny. You will ne
 <details _open>
 <summary><h3>Instructions: FreePBX</h3></summary>
 
-1. FTP into your PBX, then copy the `lenny` directory from `audio/` into `/var/lib/asterisk/sounds/talk-bot/`.
+1. FTP into your PBX, then copy the `lenny` directory from `sounds/` into `/var/lib/asterisk/sounds/talk-bot/`.
 2. Create a custom destination with the target set to `tb-control,lenny,1`. [Learn More](#custom-destinationcontexts-parameters).
    ![Custom Destination](../screenshots/tb_freepbx_custom_destination.png)
 3. Create a virtual extension.
@@ -59,7 +59,7 @@ This section instructs you on adding a talk bot, in this case Lenny. You will ne
 <details _open>
 <summary><h3>Instructions: VitalPBX</h3></summary>
 
-1. FTP into your PBX, then copy the `lenny` directory from `audio/` into `/var/lib/asterisk/sounds/talk-bot/`.
+1. FTP into your PBX, then copy the `lenny` directory from `sounds/` into `/var/lib/asterisk/sounds/talk-bot/`.
 2. Create a Custom Context with the destination set to hangup. [Learn More](#custom-destinationcontexts-parameters).
    ![Custom Context](../screenshots/tb_vitalpbx_custom_contexts.png)
 3. Create a Custom Application with the destination set to your Custom Context.
