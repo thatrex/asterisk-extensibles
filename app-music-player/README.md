@@ -36,7 +36,7 @@ This section instructs you on preparing your PBX to add music. You will only nee
 2. Under `/var/lib/asterisk/sounds/` create a directory named `music`.
 3. In your PBX admin navigate to **Admin > Config Edit**, then copy the contents of `main.conf` into `extensions_custom.conf`. Remember to save.
    ![Config Edit](../screenshots/m_freepbx_config_edit.png)
-4. Create a custom destination with the target set to `music,menu,1`. Alternatively you can put a track number instead of `menu`.
+4. Create a custom destination with the target set to `music-player,menu,1`. Alternatively you can put a track number instead of `menu`.
    ![Custom Destination](../screenshots/m_freepbx_custom_destination.png)
 5. Create a virtual extension.
    ![Create Extension](../screenshots/freepbx_create_virtual_extension.png)
