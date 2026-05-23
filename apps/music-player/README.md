@@ -35,13 +35,13 @@ This section instructs you on preparing your PBX to add music. You will only nee
 1. FTP into your PBX.
 2. Under `/var/lib/asterisk/sounds/` create a directory named `music`.
 3. In your PBX admin navigate to **Admin > Config Edit**, then copy the contents of `main.conf` into `extensions_custom.conf`. Remember to save.
-   ![Config Edit](../screenshots/m_freepbx_config_edit.png)
+   ![Config Edit](../../screenshots/m_freepbx_config_edit.png)
 4. Create a custom destination with the target set to `music-player,menu,1`. Alternatively you can put a track number instead of `menu`.
-   ![Custom Destination](../screenshots/m_freepbx_custom_destination.png)
+   ![Custom Destination](../../screenshots/m_freepbx_custom_destination.png)
 5. Create a virtual extension.
-   ![Create Extension](../screenshots/freepbx_create_virtual_extension.png)
+   ![Create Extension](../../screenshots/freepbx_create_virtual_extension.png)
 6. Under **Advanced > Optional Destinations** set **Not Reachable** to the custom destination you created.
-   ![Set Optional Destination](../screenshots/m_freepbx_set_optional_destination.png)
+   ![Set Optional Destination](../../screenshots/m_freepbx_set_optional_destination.png)
 7. Save & Apply Config. Then [add your music tracks](#adding-music-tracks).
 
 </details>
@@ -53,9 +53,9 @@ This section instructs you on preparing your PBX to add music. You will only nee
 2. Copy `main.conf` into `/etc/asterisk/vitalpbx/` then rename it to `extensions__90-music-player.conf`.
 3. Under `/var/lib/asterisk/sounds/` create a directory named `music`.
 4. Create a Custom Context with the destination set to hangup. Alternatively you can put a track number instead of `menu`.
-   ![Custom Context](../screenshots/m_vitalpbx_custom_contexts.png)
+   ![Custom Context](../../screenshots/m_vitalpbx_custom_contexts.png)
 5. Create a Custom Application with the destination set to your Custom Context.
-   ![Custom Application](../screenshots/m_vitalpbx_custom_applications.png)
+   ![Custom Application](../../screenshots/m_vitalpbx_custom_applications.png)
 6. Save & Apply Config. Then [add your music tracks](#adding-music-tracks).
 
 </details>
@@ -88,7 +88,7 @@ For the best experience you will want to enable connected line. This will allow 
 <summary><h3>Instructions: FreePBX</h3></summary>
 
 Under an extensions advanced settings, enable **Send Connected Line**.
-![advanced extension settings](../screenshots/freepbx_connected_line.png)
+![advanced extension settings](../../screenshots/freepbx_connected_line.png)
 
 </details>
 
@@ -96,6 +96,6 @@ Under an extensions advanced settings, enable **Send Connected Line**.
 <summary><h3>Instructions: VitalPBX</h3></summary>
 
 Under **Settings > Technology Settings > Device Profiles** enable **Send Connected Line** for the Default **PJSIP** and **WebRTC** profiles.
-![device profile settings](../screenshots/vitalpbx_connected_line.png)
+![device profile settings](../../screenshots/vitalpbx_connected_line.png)
 
 </details>

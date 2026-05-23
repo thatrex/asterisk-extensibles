@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > Basic terminal and PBX management skills are assumed.
 
-Extensible apps for asterisk: [**Talk Bot**](/app-talk-bot/) • [**Music Player**](/app-music-player/)
+Extensible apps for asterisk: [**Talk Bot**](/apps/talk-bot/) • [**Music Player**](/apps/music-player/)
 
 # Conversion Script
 
@@ -11,7 +11,7 @@ This script will convert common AV files (`mp3, wav, flac, webm, mkv, mp4`) to *
 
 1. Ensure [FFmpeg](https://ffmpeg.org/) is installed on your system.
 2. Open your terminal, then navigate to the directory containing the audio files to be converted.
-3. Copy and paste the script into your powershell terminal.
+3. Copy and paste the script into your PowerShell terminal.
 
 <h3>PowerShell</h3>
 

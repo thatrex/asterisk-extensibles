@@ -21,7 +21,7 @@ This section instructs you on preparing your PBX to add talk bots. You will only
 <summary><h3>Instructions: FreePBX</h3></summary>
 
 1. In your PBX admin navigate to **Admin** > **Config Edit**, then copy the contents of `main.conf` into `extensions_custom.conf`. Remember to save.
-   ![Config Edit](../screenshots/tb_freepbx_config_edit.png)
+   ![Config Edit](../../screenshots/tb_freepbx_config_edit.png)
 2. FTP into your PBX.
 3. Under `/var/lib/asterisk/sounds/` create a directory named `talk-bot`.
 4. Copy `audio/silence.ulaw` into the `talk-bot` directory.
@@ -47,11 +47,11 @@ This section instructs you on adding a talk bot, in this case Lenny. You will ne
 
 1. FTP into your PBX, then copy the `lenny` directory from `sounds/` into `/var/lib/asterisk/sounds/talk-bot/`.
 2. Create a custom destination with the target set to `tb-ctrl,lenny,1`. [Learn More](#custom-destinationcontexts-parameters).
-   ![Custom Destination](../screenshots/tb_freepbx_custom_destination.png)
+   ![Custom Destination](../../screenshots/tb_freepbx_custom_destination.png)
 3. Create a virtual extension.
-   ![Create Extension](../screenshots/freepbx_create_virtual_extension.png)
+   ![Create Extension](../../screenshots/freepbx_create_virtual_extension.png)
 4. Under **Advanced > Optional Destinations** set **Not Reachable** to the custom destination you created.
-   ![Set Optional Destination](../screenshots/tb_freepbx_set_optional_destination.png)
+   ![Set Optional Destination](../../screenshots/tb_freepbx_set_optional_destination.png)
 5. Save & Apply Config. Then give the extension a call.
 
 </details>
@@ -61,9 +61,9 @@ This section instructs you on adding a talk bot, in this case Lenny. You will ne
 
 1. FTP into your PBX, then copy the `lenny` directory from `sounds/` into `/var/lib/asterisk/sounds/talk-bot/`.
 2. Create a Custom Context with the destination set to hangup. [Learn More](#custom-destinationcontexts-parameters).
-   ![Custom Context](../screenshots/tb_vitalpbx_custom_contexts.png)
+   ![Custom Context](../../screenshots/tb_vitalpbx_custom_contexts.png)
 3. Create a Custom Application with the destination set to your Custom Context.
-   ![Custom Application](../screenshots/tb_vitalpbx_custom_applications.png)
+   ![Custom Application](../../screenshots/tb_vitalpbx_custom_applications.png)
 4. Update & Apply Config. Then give the application a call.
 
 </details>
