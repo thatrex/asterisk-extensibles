@@ -1,4 +1,4 @@
-# Asterisk Extensibles
+# Asterisk Apps
 
 > [!IMPORTANT]
 > Basic terminal and PBX management skills are assumed.
@@ -7,38 +7,26 @@ Extensible apps for asterisk: [**Talk Bot**](/app-talk-bot/) • [**Music Player
 
 # Conversion Script
 
-This script will convert any **MP3**, **WAV** or **FLAC** files to **Mono 8kHz PCM WAV** files suitable for Asterisk. Converted files will be placed in a subdirectory named `converted`.
+This script will convert common AV files (`mp3, wav, flac, webm, mkv, mp4`) to **Mono 8kHz PCM WAV** files suitable for Asterisk. Converted files will be placed in a subdirectory named `processed`.
 
 1. Ensure [FFmpeg](https://ffmpeg.org/) is installed on your system.
 2. Open your terminal, then navigate to the directory containing the audio files to be converted.
-3. Copy and paste the appropriate script for your OS into your terminal.
+3. Copy and paste the script into your powershell terminal.
 
-<details>
-<summary><h3>Windows (PowerShell)</h3></summary>
+<h3>PowerShell</h3>
+
+_The text being red is not of concern._
 
 ```powershell
-$output = "converted"
-New-Item -Path $output -ItemType Directory -Force
-Get-ChildItem | where {$_.extension -in ".mp3",".wav",".flac"} | ForEach-Object {
-   $name = "$output/$($_.BaseName).wav"
-   & ffmpeg -i $_.Name -ar 8000 -ac 1 -acodec pcm_s16le -f wav $name
-}
+$OPATH = 'processed'
+$TYPES = 'mp3', 'wav', 'flac', 'webm', 'mkv', 'mp4'
 
+New-Item $OPATH -Type Directory -Force
+
+$TYPES `
+| ForEach-Object { Get-ChildItem "*.$_" } `
+| ForEach-Object -Parallel {
+    $OFILE = Join-Path $using:OPATH ($_.BaseName + '.wav')
+    & ffmpeg -i $_.Name -ar 8000 -ac 1 -acodec pcm_s16le $OFILE # -map_metadata -1
+} -ThrottleLimit 4
 ```
-
-</details>
-
-<details>
-<summary><h3>Linux (Bash)</h3></summary>
-
-```bash
-output="converted"
-mkdir -p $output
-for file in *.mp3 *.wav *.flac; do
-  name="$output/${file%.${file##*.}}.wav"
-  ffmpeg -i "$file" -ar 8000 -ac 1 -acodec pcm_s16le -f wav "$name";
-done
-
-```
-
-</details>
